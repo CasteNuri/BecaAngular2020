@@ -16,9 +16,9 @@ public class MenuView {
 		System.out.println("**********************");
 		System.out.println("");
 		
-		for (int i = 0; i < App.films.length; i++) {
-			if(App.films[i]!=null){
-				System.out.println(i+"-"+((Film)App.films[i]).getName());
+		for (int i = 0; i < App.films.size(); i++) {
+			if(App.films.get(i)!=null){
+				System.out.println(i+"-"+((Film)App.films.get(i)).getName());
 			}
 		}
 		
@@ -26,7 +26,7 @@ public class MenuView {
 		Scanner scanner= new Scanner(System.in);
 		int opcion=scanner.nextInt();
 		
-		App.playController.play(App.films[opcion]);
+		App.playController.play(App.films.get(opcion));
 		
 		MenuView.printMenu();
 		

@@ -1,23 +1,25 @@
 package edu.es.eoi;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import edu.es.eoi.controller.FilmController;
-import edu.es.eoi.controller.PersonController;
 import edu.es.eoi.controller.PlayController;
 import edu.es.eoi.domain.Film;
-import edu.es.eoi.domain.Serie;
 import edu.es.eoi.domain.User;
 import edu.es.eoi.interfaces.Playable;
 import edu.es.eoi.repository.FilmRepository;
 import edu.es.eoi.service.FilmService;
-import edu.es.eoi.service.PersonService;
 import edu.es.eoi.service.PlayService;
 import edu.es.eoi.view.MenuView;
 
 public class App {
 	
-	public static Playable[] films= new Film[1000];
-	public static Playable[] series= new Serie[1000];
-	public static User[] users= new User[50];
+	public static List<Playable> films= new ArrayList<Playable>();
+	public static List<Playable> series= new ArrayList<Playable>();
+	public static Set<User> users= new HashSet<User>();
 	public static PlayService playService= new PlayService();
 	public static PlayController playController= new PlayController(playService);
 	public static FilmRepository filmRepository= new FilmRepository();

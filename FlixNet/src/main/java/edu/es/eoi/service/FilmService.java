@@ -1,7 +1,7 @@
 package edu.es.eoi.service;
 
 import edu.es.eoi.domain.Film;
-import edu.es.eoi.repository.FilmRepository;
+import edu.es.eoi.interfaces.RepositoryInterface;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class FilmService {
 	
-	private FilmRepository repository;
+	private RepositoryInterface<Film> repository;
 	
 	public void addFilm(Film film) {			
 		repository.create(film);

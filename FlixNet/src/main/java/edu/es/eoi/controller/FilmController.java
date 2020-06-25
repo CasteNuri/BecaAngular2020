@@ -1,5 +1,7 @@
 package edu.es.eoi.controller;
 
+import java.util.Map;
+
 import edu.es.eoi.domain.Film;
 import edu.es.eoi.service.FilmService;
 import lombok.AllArgsConstructor;
@@ -29,4 +31,7 @@ public class FilmController {
 			service.updateFilm(film);
 		}
 		
+		public Map<String, Film> findAll() {
+			return service.findAll(); 
+		}
 	}

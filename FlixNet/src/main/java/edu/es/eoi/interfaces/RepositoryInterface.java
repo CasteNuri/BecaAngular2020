@@ -9,5 +9,7 @@ public interface RepositoryInterface<T> {
 	void update(T entity);
 
 	void delete(T entity);
+	
+	//public Map<String, T> readAll();
 
 }

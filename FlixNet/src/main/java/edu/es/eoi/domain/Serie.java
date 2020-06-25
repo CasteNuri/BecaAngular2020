@@ -1,5 +1,7 @@
 package edu.es.eoi.domain;
 
+import java.util.List;
+
 import edu.es.eoi.interfaces.Playable;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,9 +13,9 @@ public class Serie implements Playable {
 	private Category category;
 	private String name;
 	private String year;
-	private Season[] season;
-	private Actor[] actors;
-	private Producer[] producers;
+	private List<Season> season;
+	private List<Actor> actors;
+	private List<Producer> producers;
 
 	@Override
 	public void play() {

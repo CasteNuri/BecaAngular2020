@@ -1,5 +1,7 @@
 package edu.es.eoi.domain;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +13,6 @@ public class Season {
 	
 	private String name;
 	private String year;
-	private Chapter[] chapters;
+	private List<Chapter> chapters;
 
 }

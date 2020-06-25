@@ -1,11 +1,11 @@
 package edu.es.eoi;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import edu.es.eoi.controller.FilmController;
 import edu.es.eoi.controller.PlayController;
@@ -19,7 +19,7 @@ import edu.es.eoi.view.MenuView;
 
 public class App {
 	
-	public static Map<String, Film> films= new HashMap<String, Film>();
+	public static Map<String, Film> films= new TreeMap<String, Film>();
 	public static List<Playable> series= new ArrayList<Playable>();
 	public static Set<User> users= new HashSet<User>();
 	public static PlayService playService= new PlayService();

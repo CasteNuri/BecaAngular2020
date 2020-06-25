@@ -1,5 +1,8 @@
 package edu.es.eoi.domain;
 
+import java.util.List;
+
+import edu.es.eoi.interfaces.Playable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +10,6 @@ import lombok.Setter;
 @Setter
 public class Wishlist {
 	
-	private Object[] myList;
+	private List<Playable> myList;
 
 }

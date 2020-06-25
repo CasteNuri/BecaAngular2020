@@ -1,5 +1,7 @@
 package edu.es.eoi.service;
 
+import java.util.List;
+
 import edu.es.eoi.interfaces.Playable;
 
 public class PlayService {
@@ -8,12 +10,10 @@ public class PlayService {
 		playable.play();
 	}
 	
-	public static void play(Playable[] playList) {		
-		for (int i = 0; i < playList.length; i++) {
-			if(playList[i]!=null) {
-				play(playList[i]);
-			}			
-		}	
+	public static void play(List<Playable> playList) {		
+		for (Playable playable : playList) {
+			playable.play();
+		}
 	}
 
 }

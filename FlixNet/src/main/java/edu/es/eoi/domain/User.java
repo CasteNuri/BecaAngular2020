@@ -1,5 +1,7 @@
 package edu.es.eoi.domain;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +13,7 @@ public class User extends Person {
 	private String password;
 	private String iban;
 	private Suscription suscription;
-	private Profile[] profiles;
+	private List<Profile> profiles;
 	private Wishlist wishList;
 	
 	

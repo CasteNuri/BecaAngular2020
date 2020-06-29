@@ -1,12 +1,21 @@
 package edu.es.eoi.repository;
 
+
 import java.util.Map;
 
 import edu.es.eoi.App;
 import edu.es.eoi.domain.Film;
 import edu.es.eoi.interfaces.RepositoryInterface;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@AllArgsConstructor
+@Getter
+@Setter
 public class FilmRepository implements RepositoryInterface<Film>{
+	
+	private Map<String,Film> films;
 	
 	//Create Read Update Delete	
 	public void create(Film film) {

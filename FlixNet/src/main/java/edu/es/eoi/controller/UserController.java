@@ -1,5 +1,5 @@
 package edu.es.eoi.controller;
 
-public class PersonController {
+public class UserController {
 
 }

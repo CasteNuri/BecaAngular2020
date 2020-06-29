@@ -10,12 +10,13 @@ import lombok.Setter;
 @Setter
 public class Film implements Playable{
 
-	private Category category;
+	private CategoryEnum category;
 	private String name;
 	private String year;
 	private double duration;
 	private List<Actor> actors;
 	private List<Producer> producers;
+	private List<String> opinions;
 	
 	@Override
 	public void play() {

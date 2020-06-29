@@ -6,11 +6,11 @@ import edu.es.eoi.interfaces.Playable;
 
 public class PlayService {
 	
-	public static void play(Playable playable) {
+	public void play(Playable playable) {
 		playable.play();
 	}
 	
-	public static void play(List<Playable> playList) {		
+	public void play(List<Playable> playList) {		
 		for (Playable playable : playList) {
 			playable.play();
 		}

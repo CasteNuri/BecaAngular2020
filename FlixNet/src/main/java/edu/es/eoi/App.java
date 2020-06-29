@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import edu.es.eoi.controller.FilmController;
-import edu.es.eoi.controller.PlayController;
+import edu.es.eoi.domain.CategoryEnum;
 import edu.es.eoi.domain.Film;
 import edu.es.eoi.domain.User;
 import edu.es.eoi.interfaces.Playable;
@@ -23,10 +23,9 @@ public class App {
 	public static List<Playable> series= new ArrayList<Playable>();
 	public static Set<User> users= new HashSet<User>();
 	public static PlayService playService= new PlayService();
-	public static PlayController playController= new PlayController(playService);
-	public static FilmRepository filmRepository= new FilmRepository();
+	public static FilmRepository filmRepository= new FilmRepository(films);
 	public static FilmService filmService= new FilmService(filmRepository);
-	public static FilmController filmController= new FilmController(filmService);	
+	public static FilmController filmController= new FilmController(filmService, playService);	
 
 	public static void main(String[] args) {	
 		createPlayOffer();
@@ -44,10 +43,12 @@ public class App {
 		Film film4= new Film();
 		film4.setName("La Jungla de cristal 4");
 		
-		filmController.addFilm(film1);
-		filmController.addFilm(film2);
-		filmController.addFilm(film3);
-		filmController.addFilm(film4);
+		filmRepository.create(film1);
+		filmRepository.create(film2);
+		filmRepository.create(film3);
+		filmRepository.create(film4);
+		
+		film1.setCategory(CategoryEnum.ACCION);
 		
 	}
 

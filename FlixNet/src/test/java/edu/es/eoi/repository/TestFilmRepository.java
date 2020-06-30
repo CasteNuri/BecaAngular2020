@@ -19,22 +19,22 @@ public class TestFilmRepository {
 
 	@Test
 	public void testRead() {
-		fail("Not yet implemented");
+		repository.read("TEST");
 	}
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		repository.update(new Film());
 	}
 
 	@Test
 	public void testDelete() {
-		fail("Not yet implemented");
+		repository.delete(new Film());
 	}
 
 	@Test
 	public void testReadAll() {
-		fail("Not yet implemented");
+		repository.readAll();
 	}
 
 }

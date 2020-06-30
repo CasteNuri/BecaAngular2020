@@ -1,5 +1,6 @@
 package edu.es.eoi.service;
 
+import java.io.FileNotFoundException;
 import java.util.Map;
 
 import edu.es.eoi.domain.Film;
@@ -18,7 +19,7 @@ public class FilmService {
 	//private RepositoryInterface<Film> repository;
 	private FilmRepository repository;
 	
-	public Film findByName(String name) {
+	public Film findByName(String name) throws FileNotFoundException {
 		return repository.read(name);
 	}
 	

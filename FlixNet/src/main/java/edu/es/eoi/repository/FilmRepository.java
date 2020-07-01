@@ -1,7 +1,12 @@
 package edu.es.eoi.repository;
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Map;
+import java.util.TreeMap;
 
 import edu.es.eoi.App;
 import edu.es.eoi.domain.Film;
@@ -39,7 +44,20 @@ public class FilmRepository implements RepositoryInterface<Film>{
 	}
 
 	
-	public Map<String, Film> readAll() {
-		return App.films; 
+	public Map<String, Film> readAll() throws IOException {
+		Map<String, Film> films = new TreeMap<String,Film>();
+		//Load the films from the file
+		FileReader fr = new FileReader(new File("src/main/resources/films.txt"));
+		BufferedReader br = new BufferedReader(fr);
+		String input;
+		
+		while((input=br.readLine()) != null) {
+			Film film = new Film();
+			film.setName(input.substring(0,input.lastIndexOf(",")));
+			film.setYear(input.substring(input.lastIndexOf(",")+1));
+			films.put(film.getName(), film);
+		}
+		br.close();
+		return films; 
 	}
 }

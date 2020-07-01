@@ -1,6 +1,6 @@
 package edu.es.eoi.repository;
 
-import static org.junit.Assert.fail;
+import java.io.IOException;
 
 import org.junit.Test;
 
@@ -9,8 +9,8 @@ import edu.es.eoi.domain.Film;
 
 public class TestFilmRepository {
 
-	App app = new App();
-	FilmRepository repository = new FilmRepository(app.films);
+	
+	FilmRepository repository = new FilmRepository(App.films);
 	
 	@Test
 	public void testCreate() {
@@ -33,7 +33,7 @@ public class TestFilmRepository {
 	}
 
 	@Test
-	public void testReadAll() {
+	public void testReadAll() throws IOException {
 		repository.readAll();
 	}
 
